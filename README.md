@@ -7,33 +7,50 @@ This analysis was created using VBA to help a friend, Steve, determine whether c
 ### Comparing Performance by Year
 After running the VBA module for both 2017 and 2018, it is apparent which year these stocks performed the best. Below are images of each year’s stock performances for reference:
 #### 2017
-[Insert Image here]
+
+![2017_Stock_Performances](https://user-images.githubusercontent.com/94764735/147011821-a01d3fd3-becc-4b28-aed2-967dd1c1e724.png)
+
 #### 2018
-[Insert Image here]
+
+![2018_Stock_Performances](https://user-images.githubusercontent.com/94764735/147011831-c1706b72-0273-4c4f-a2a3-1c29048b6631.png)
+
 2017 clearly has more green cells in the “Return” column, meaning that more of these stocks had a positive return over the course of that year. In fact, only one of the stocks had a negative return that year. In 2018, however, there was a drastic change, as only two of the stocks had a positive return that year. Although only two years of data were analyzed, it is evident that these stocks are all rather volatile. Perhaps an analysis of more than just two years of data would better inform Steve’s investment decisions.
 
 ### Execution times of Original Script vs Refactored Script
 The original script finds the value of the `Variables` we are looking for by running through all rows of the data a total of 12 times using `Nested For Loops`. The code outputs the desired data and runs in about 0.71 seconds, but there was room for improvement via refactoring. See the original `Nested For Loop` below:
-[Insert Image Here]
+
+![Original_Script](https://user-images.githubusercontent.com/94764735/147011844-0bcb9e1c-3974-4090-a56d-63c70c93006c.png)
 
 The challenge of refactoring the script was figuring out how to change it so that it runs faster than it already did. As was stated earlier, the script runs through all lines of data 12 times, once for each ticker. But what if there’s a way to output the analysis while only having to run through the data once? That is exactly what the refactored script does. Rather than using `Variables` to pull the output data, the refactored script incorporates `Arrays` to do the same thing. Using `Arrays` tells the script to pull output data for all tickers in just the first run-through of the data set. That way there’s no need to run through the data set 12 whole times. See below for the refactored script:
-[Insert Image Here]
+
+![Refactored_Script](https://user-images.githubusercontent.com/94764735/147011850-a4d47f9f-755d-429a-a672-d111566ad834.png)
 
 Notice that the output values from the original script, such as `totalVolume`, `startingPrice`, and `endingPrice` were changed to `tickerVolumes()`, `tickerStartingPrices()`, and `tickerEndingPrices()`. Those edits are where the `Variables` were changed to `Arrays`. 
 
 Also notice how the `For Loops` are separated into three individual loops. This means that the script is no longer telling the second `For Loop` to run those 12 times because it is no longer being run inside of the first `For Loop`. 
 
 This refactored script runs in about 0.12 seconds, almost 1/7th the time of the original. See below for the official run-times before and after refactoring:
-2017
-Original
-[Insert Image Here]
-Refactored
-[Insert Image Here]
-2018
-Original
-[Insert Image Here]
-Refactored
-[Insert Image Here]
+
+#### 2017
+
+#### Original
+
+![Original_Runtime_2017](https://user-images.githubusercontent.com/94764735/147011861-2e53a37f-6c26-461a-ae47-0e91aa864da0.png)
+
+#### Refactored
+
+![VBA_Challenge_2017](https://user-images.githubusercontent.com/94764735/147011870-643a2b52-1f62-475b-8b24-e4c67c3ba3c6.png)
+
+#### 2018
+
+#### Original
+
+![Original_Runtime_2018](https://user-images.githubusercontent.com/94764735/147011883-50348045-b7a7-49ec-abff-1778212bce78.png)
+
+#### Refactored
+
+![VBA_Challenge_2018](https://user-images.githubusercontent.com/94764735/147011893-fa12f516-996d-4950-8415-263c2325a9a5.png)
+
 ## Summary
 
 ### Advantages and Disadvantages of Refactoring Code
