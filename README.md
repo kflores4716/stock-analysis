@@ -6,11 +6,8 @@ This analysis was created using VBA to help a friend, Steve, determine whether c
 ## Results
 ### Comparing Performance by Year
 After running the VBA module for both 2017 and 2018, it is apparent which year these stocks performed the best. Below are images of each year’s stock performances for reference:
-#### 2017
 
 ![2017_Stock_Performances](https://user-images.githubusercontent.com/94764735/147011821-a01d3fd3-becc-4b28-aed2-967dd1c1e724.png)
-
-#### 2018
 
 ![2018_Stock_Performances](https://user-images.githubusercontent.com/94764735/147011831-c1706b72-0273-4c4f-a2a3-1c29048b6631.png)
 
@@ -31,8 +28,6 @@ Also notice how the `For Loops` are separated into three individual loops. This 
 
 This refactored script runs in about 0.12 seconds, almost 1/7th the time of the original. See below for the official run-times before and after refactoring:
 
-#### 2017
-
 #### Original
 
 ![Original_Runtime_2017](https://user-images.githubusercontent.com/94764735/147011861-2e53a37f-6c26-461a-ae47-0e91aa864da0.png)
@@ -40,8 +35,6 @@ This refactored script runs in about 0.12 seconds, almost 1/7th the time of the 
 #### Refactored
 
 ![VBA_Challenge_2017](https://user-images.githubusercontent.com/94764735/147011870-643a2b52-1f62-475b-8b24-e4c67c3ba3c6.png)
-
-#### 2018
 
 #### Original
 
